@@ -1,4 +1,5 @@
 class Solution {
+    
     public int arrayNesting(int[] nums) {
         int len = nums.length;
         int answer = 0;
@@ -14,7 +15,7 @@ class Solution {
                 int iter = nums[i];
                 while (true) {
                     int tmp = iter;
-                    iter = nums[iter];
+                    iter = nums[iter];   
                     nums[tmp] = len;
                     if (iter == len) {
                         break;
