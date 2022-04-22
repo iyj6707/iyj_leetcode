@@ -17,19 +17,16 @@ class Solution:
                         dfs(i + 1)
                         cur.pop()
                         cur.append(s[i].upper())
-                        dfs(i + 1)
-                        cur.pop()
                     else:
                         cur.append(s[i].upper())
                         dfs(i + 1)
                         cur.pop()
                         cur.append(s[i].lower())
-                        dfs(i + 1)
-                        cur.pop()
                 else:
                     cur.append(s[i])
-                    dfs(i + 1)
-                    cur.pop()
+                
+                dfs(i + 1)
+                cur.pop()
                 
         dfs(0)
         return ans
