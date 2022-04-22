@@ -12,16 +12,10 @@ class Solution:
             
             for i in range(start, length):
                 if s[i].isalpha():
-                    if s[i].isupper():
-                        cur.append(s[i].lower())
-                        dfs(i + 1)
-                        cur.pop()
-                        cur.append(s[i].upper())
-                    else:
-                        cur.append(s[i].upper())
-                        dfs(i + 1)
-                        cur.pop()
-                        cur.append(s[i].lower())
+                    cur.append(s[i].lower())
+                    dfs(i + 1)
+                    cur.pop()
+                    cur.append(s[i].upper())
                 else:
                     cur.append(s[i])
                 
