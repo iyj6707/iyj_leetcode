@@ -9,10 +9,10 @@ class DisjointSet:
         if pa == pb: return
         if self.rank[pa] > self.rank[pb]:
             self.parent[pb] = pa
-            self.rank[pa] += self.rank[pb]
+            self.rank[pa] += 1
         else:
             self.parent[pa] = pb
-            self.rank[pb] += self.rank[pa]
+            self.rank[pb] += 1
     
     def find(self, a):
         if self.parent[a] == a:
