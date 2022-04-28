@@ -12,7 +12,7 @@ class Solution:
         
         beg, end = -1, max(max(heights, key = max))
         while beg + 1 < end:
-            mid = (beg + end)//2
+            mid = (beg + end) // 2
             visited = set()
             dfs(mid, 0, 0)
             if (m - 1, n - 1) in visited:
