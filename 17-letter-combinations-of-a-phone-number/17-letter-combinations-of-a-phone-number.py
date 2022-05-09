@@ -14,20 +14,16 @@ class Solution:
             "9": ["w", "x", "y", "z"]
         }
         
-        permute = []
-        for digit in digits:
-            permute.append(phone_letter[digit])
-        
         ans = []
-        def dfs(start, ans_str, depth):
+        def dfs(ans_str, depth):
             if depth == len(digits):
                 ans.append(ans_str)
                 return
             
-            for j in range(len(permute[depth])):
-                dfs(start + 1, ans_str + permute[depth][j], depth + 1)
+            for letter in phone_letter[digits[depth]]:
+                dfs(ans_str + letter, depth + 1)
 
-        dfs(0, "", 0)
+        dfs("", 0)
                     
         return ans
                 
