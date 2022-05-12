@@ -10,12 +10,14 @@ class Solution:
                     return
             
             for idx in range(0, nums_length):
-                if idx not in visited:
-                    cur_list.append(nums[idx])
-                    visited.append(idx)
-                    dfs(cur_list, depth + 1, visited)
-                    cur_list.pop()
-                    visited.pop()
+                if idx in visited:
+                    continue
+                
+                cur_list.append(nums[idx])
+                visited.append(idx)
+                dfs(cur_list, depth + 1, visited)
+                cur_list.pop()
+                visited.pop()
         
         dfs([], 0, [])
         
