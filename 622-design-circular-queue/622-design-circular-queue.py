@@ -11,11 +11,7 @@ class MyCircularQueue:
             return False
             
         self.stack[self.rear] = value
-        
-        if self.rear == self.size - 1:
-            self.rear = 0
-        else:
-            self.rear += 1
+        self.rear = (self.rear + 1) % self.size
             
         return True
 
@@ -24,11 +20,7 @@ class MyCircularQueue:
             return False
             
         self.stack[self.front] = None
-        
-        if self.front == self.size - 1:
-            self.front = 0
-        else:
-            self.front += 1
+        self.front = (self.front + 1) % self.size
         
         return True
 
