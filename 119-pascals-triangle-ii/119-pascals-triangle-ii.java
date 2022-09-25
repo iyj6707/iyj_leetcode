@@ -17,12 +17,8 @@ class Solution {
             }
             curr.add(1);
             pre = curr;
-
-            if(i == rowIndex){
-                return pre;
-            }
         }
 
-        return null;
+        return pre;
     }
 }
